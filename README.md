@@ -1,7 +1,7 @@
 [![UnitTest](https://github.com/nao1215/nameconv/actions/workflows/unit_test.yml/badge.svg)](https://github.com/nao1215/nameconv/actions/workflows/unit_test.yml)
 [![reviewdog](https://github.com/nao1215/nameconv/actions/workflows/review_dog.yml/badge.svg)](https://github.com/nao1215/nameconv/actions/workflows/review_dog.yml)
+[![codecov](https://codecov.io/gh/nao1215/nameconv/branch/main/graph/badge.svg?token=DO641K2SOW)](https://codecov.io/gh/nao1215/nameconv)
 [![Go Report Card](https://goreportcard.com/badge/github.com/nao1215/nameconv)](https://goreportcard.com/report/github.com/nao1215/nameconv)
-![GitHub](https://img.shields.io/github/license/nao1215/nameconv)
 
 # nameconv
 **nameconv** is library that converts string naming conventions. 
