@@ -13,9 +13,10 @@ The following function converts the string passed as an argument to the specifie
 |:--|:--|
 |ToSnakeCase()| convert string to snake_case style |
 |ToChainCase()| convert string to chain-case style|
+|ToKebabCase()| same as ToChainCase()|
 |ToCamelCase()| convert string to camelCase style|
 |ToPascalCase()| convert string to PascalCase style|
-|ToFlatCase()| convert argument to flatcase style|
+|ToFlatCase()| convert string to flatcase style|
 |ToUpperCase()| convert string to UPPER_CASE style|
 
 ## Check naming convention
@@ -24,9 +25,10 @@ The following function returns true if the naming convention is as expected, fal
 |:--|:--|
 |IsSnakeCase()| check whether string is snake_case style or not |
 |IsChainCase()| check whether string is chain-case style or not|
-|IsCamelCase()| check whether argument is camelCase style or not |
-|IsPascalCase()| check whether argument is camelCase style or not |
-|IsFlatCase()| check whether argument is flatcase style or not|
+|IsKebabCase()| same as IsChainCase()|
+|IsCamelCase()| check whether string is camelCase style or not |
+|IsPascalCase()| check whether string is camelCase style or not |
+|IsFlatCase()| check whether string is flatcase style or not|
 |IsUpperCase()| check whether string is UPPER_CASE style or not |
 
 # LICENSE

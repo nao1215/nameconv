@@ -325,6 +325,76 @@ func TestToUpperCase(t *testing.T) {
 }
 
 //------The following source code does not exist in the original version----------------------
+//
+// The above code is the copyright below.
+//
+// Copyright 2022 Naohiro CHIKAMATSU
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+func TestToKebabCase(t *testing.T) {
+	testCases := []stringExpectedCase{
+		{"foo_bar", "foo-bar"},
+		{"foo-bar", "foo-bar"},
+		{"foo-bar_baz", "foo-bar-baz"},
+		{"foo--bar__baz", "foo-bar-baz"},
+		{"fooBar", "foo-bar"},
+		{"FooBar", "foo-bar"},
+		{"foo bar", "foo-bar"},
+		{"   foo   bar   ", "foo-bar"},
+		{"fooBar111", "foo-bar-111"},
+		{"111FooBar", "111-foo-bar"},
+		{"foo-111-Bar", "foo-111-bar"},
+		{"", ""},
+	}
+
+	for _, tc := range testCases {
+		if actual := ToKebabCase(tc.target); actual != tc.expected {
+			t.Errorf("ToKebabCase(%s) returns %s, but expected %s", tc.target, actual, tc.expected)
+		}
+	}
+}
+
+func TestIsKebabCase(t *testing.T) {
+	testCases := []boolExpectedCase{
+		{"foo-bar", true},
+		{"foo1-bar2", true},
+		{"foo-bar-1", true},
+		{"foo-bar-1", true},
+		{"111-foo-bar", true},
+		{"foobar", true},
+		{"foobar1", true},
+		{"foo1bar", true},
+		{"1foobar", true},
+
+		{"", false},
+		{"FOO-BAR", false},
+		{"fooBar", false},
+		{"FooBar", false},
+		{"FOOBAR", false},
+		{"foo-@bar", false},
+		{"foo_bar", false},
+		{"テスト", false},
+		{"テスト-テスト", false},
+	}
+
+	for _, tc := range testCases {
+		if actual := IsKebabCase(tc.target); actual != tc.expected {
+			t.Errorf("IsKebabCase(%s) returns %t, but expected %t", tc.target, actual, tc.expected)
+		}
+	}
+}
+
 func TestIsFirstRuneUpper(t *testing.T) {
 	testCases := ""
 	if isFirstRuneUpper(testCases) {

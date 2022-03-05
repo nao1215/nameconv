@@ -95,7 +95,7 @@ func ToCamelCase(s string) string {
 	return strings.Join(fields, "")
 }
 
-// IsCamelCase check whether argument is camelCase style or not.
+// IsCamelCase check whether string is camelCase style or not.
 // true: string is camel case, false: other.
 // If first character is digit, always returns false
 func IsCamelCase(s string) bool {
@@ -119,7 +119,7 @@ func ToPascalCase(s string) string {
 	return strings.Join(fields, "")
 }
 
-// IsPascalCase check whether argument is PascalCase style or not.
+// IsPascalCase check whether string is PascalCase style or not.
 // true: string is pascal case, false: other.
 // If first character is digit, always returns false
 func IsPascalCase(s string) bool {
@@ -129,7 +129,7 @@ func IsPascalCase(s string) bool {
 	return isMadeByAlphanumeric(s) && isFirstRuneUpper(s)
 }
 
-// ToFlatCase convert argument to flatcase style.
+// ToFlatCase convert string to flatcase style.
 // If argument is empty, return itself
 func ToFlatCase(s string) string {
 	if len(s) == 0 {
@@ -140,7 +140,7 @@ func ToFlatCase(s string) string {
 	return strings.Join(fields, "")
 }
 
-// IsFlatCase check whether argument is flatcase style or not.
+// IsFlatCase check whether string is flatcase style or not.
 // true: string is flat case, false: other.
 // If first character is digit, always returns false
 func IsFlatCase(s string) bool {
@@ -264,4 +264,34 @@ func splitToLowerFields(s string) []string {
 func toUpperFirstRune(s string) string {
 	rs := []rune(s)
 	return strings.ToUpper(string(rs[0])) + string(rs[1:])
+}
+
+//------The following source code does not exist in the original version----------------------
+//
+// The above code is the copyright below.
+//
+// Copyright 2022 Naohiro CHIKAMATSU
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+// ToKebabCase convert string to kebab-case style. It's same as ToChainCase().
+// If argument is empty, return itself.
+func ToKebabCase(s string) string {
+	return ToChainCase(s)
+}
+
+// IsKebabCase check whether string is kebab-case style. It's same as IsChainCase().
+// true: string is chain case, false: other
+func IsKebabCase(s string) bool {
+	return IsChainCase(s)
 }
