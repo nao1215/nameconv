@@ -6,8 +6,7 @@
 # nameconv
 **nameconv** is library that converts string naming conventions. 
 
-# Function List
-## Convert function
+## Convert functions
 The following function converts the string passed as an argument to the specified naming convention.
 | funtion|description|
 |:--|:--|
@@ -17,8 +16,8 @@ The following function converts the string passed as an argument to the specifie
 |ToCamelCase()| convert string to camelCase style|
 |ToPascalCase()| convert string to PascalCase style|
 |ToFlatCase()| convert string to flatcase style|
-|ToUpperCase()| convert string to UPPER_CASE style|
-
+|ToUpperCase()| convert string to UPPER_CASE style|  
+    
 ## Check naming convention
 The following function returns true if the naming convention is as expected, false otherwise.
 | funtion|description|
@@ -29,7 +28,11 @@ The following function returns true if the naming convention is as expected, fal
 |IsCamelCase()| check whether string is camelCase style or not |
 |IsPascalCase()| check whether string is camelCase style or not |
 |IsFlatCase()| check whether string is flatcase style or not|
-|IsUpperCase()| check whether string is UPPER_CASE style or not |
+|IsUpperCase()| check whether string is UPPER_CASE style or not |  
+
+If first character is digit, IsCamelCase(), IsPascalCase(), IsFlatCase() always returns false. Because function can not judge upper or lower.
+
+# Example
 
 # LICENSE
 The nameconv project is the mixed-license.
@@ -38,3 +41,5 @@ The nameconv project is the mixed-license.
 - Apache License Version 2.0（All codes other than the above）
 
 The authors of the MIT license source code are [pinzolo](https://github.com/pinzolo) and [Fatih Arslan](https://github.com/fatih). The code written by each author clearly states the full MIT license and Copyright.
+
+# 
