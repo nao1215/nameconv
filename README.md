@@ -2,8 +2,8 @@
 [![reviewdog](https://github.com/nao1215/nameconv/actions/workflows/review_dog.yml/badge.svg)](https://github.com/nao1215/nameconv/actions/workflows/review_dog.yml)
 [![codecov](https://codecov.io/gh/nao1215/nameconv/branch/main/graph/badge.svg?token=DO641K2SOW)](https://codecov.io/gh/nao1215/nameconv)
 [![Go Reference](https://pkg.go.dev/badge/github.com/nao1215/nameconv.svg)](https://pkg.go.dev/github.com/nao1215/nameconv)
-[![Go Report Card](https://goreportcard.com/badge/github.com/nao1215/nameconv)](https://goreportcard.com/report/github.com/nao1215/nameconv)
-
+[![Go Report Card](https://goreportcard.com/badge/github.com/nao1215/nameconv)](https://goreportcard.com/report/github.com/nao1215/nameconv)  
+[[日本語](./doc/README.ja.md)]
 # nameconv
 **nameconv** is library that converts string naming conventions. 
     
@@ -27,7 +27,7 @@ The following function returns true if the naming convention is as expected, fal
 |IsChainCase()| check whether string is chain-case style or not|
 |IsKebabCase()| same as IsChainCase()|
 |IsCamelCase()| check whether string is camelCase style or not |
-|IsPascalCase()| check whether string is camelCase style or not |
+|IsPascalCase()| check whether string is PascalCase style or not |
 |IsFlatCase()| check whether string is flatcase style or not|
 |IsUpperCase()| check whether string is UPPER_CASE style or not |  
 
