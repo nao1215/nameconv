@@ -5,7 +5,7 @@
 
 # nameconv
 **nameconv** is library that converts string naming conventions. 
-
+    
 ## Convert functions
 The following function converts the string passed as an argument to the specified naming convention.
 | function|description|
@@ -33,6 +33,38 @@ The following function returns true if the naming convention is as expected, fal
 If first character is digit, IsCamelCase(), IsPascalCase(), IsFlatCase() always returns false. Because function can not judge upper or lower.
 
 # Example
+```
+package main
+
+import (
+	"fmt"
+
+	"github.com/nao1215/nameconv"
+)
+
+func main() {
+	fmt.Println(nameconv.ToSnakeCase("dave mustaine"))            // dave_mustaine
+	fmt.Println(nameconv.ToChainCase("TifaLockhart"))             // tifa-lockhart
+	fmt.Println(nameconv.ToKebabCase("The_Shawshank_Redemption")) // the-shawshank-redemption
+	fmt.Println(nameconv.ToCamelCase("master-of_puppets"))        // masterOfPuppets
+	fmt.Println(nameconv.ToPascalCase("Miracles_outOf-nowhere"))  // MiraclesOutOfNowhere
+	fmt.Println(nameconv.ToFlatCase("SolBadguy"))                 // Sol badguy
+	fmt.Println(nameconv.ToUpperCase("heaven and hell"))          // HEAVEN_AND_HELL
+
+	fmt.Println(nameconv.IsSnakeCase("snake_case"))  // true
+	fmt.Println(nameconv.IsChainCase("chain-case"))  // true
+	fmt.Println(nameconv.IsKebabCase("kebab case"))  // false
+	fmt.Println(nameconv.IsCamelCase("CamelCase"))   // false
+	fmt.Println(nameconv.IsPascalCase("pascalCase")) // false
+	fmt.Println(nameconv.IsFlatCase("flat-case"))    // false
+	fmt.Println(nameconv.IsUpperCase("0_UPPER"))     // true
+}
+```
+  
+# Contact
+If you would like to send comments such as "find a bug" or "request for additional features" to the developer, please use one of the following contacts.
+
+[GitHub Issue](https://github.com/nao1215/gup/nameconv)
 
 # LICENSE
 The nameconv project is the mixed-license.
@@ -41,5 +73,3 @@ The nameconv project is the mixed-license.
 - Apache License Version 2.0（All codes other than the above）
 
 The authors of the MIT license source code are [pinzolo](https://github.com/pinzolo) and [Fatih Arslan](https://github.com/fatih). The code written by each author clearly states the full MIT license and Copyright.
-
-# 
