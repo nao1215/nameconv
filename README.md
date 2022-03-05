@@ -8,7 +8,7 @@
 
 ## Convert functions
 The following function converts the string passed as an argument to the specified naming convention.
-| funtion|description|
+| function|description|
 |:--|:--|
 |ToSnakeCase()| convert string to snake_case style |
 |ToChainCase()| convert string to chain-case style|
@@ -20,7 +20,7 @@ The following function converts the string passed as an argument to the specifie
     
 ## Check naming convention
 The following function returns true if the naming convention is as expected, false otherwise.
-| funtion|description|
+| function|description|
 |:--|:--|
 |IsSnakeCase()| check whether string is snake_case style or not |
 |IsChainCase()| check whether string is chain-case style or not|
