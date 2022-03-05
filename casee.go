@@ -27,7 +27,7 @@ import (
 	"unicode"
 )
 
-// ToSnakeCase convert argument to snake_case style string.
+// ToSnakeCase convert string to snake_case style.
 // If argument is empty, return itself.
 func ToSnakeCase(s string) string {
 	if len(s) == 0 {
@@ -38,7 +38,8 @@ func ToSnakeCase(s string) string {
 	return strings.Join(fields, "_")
 }
 
-// IsSnakeCase check whether argument is snake_case style string, return true.
+// IsSnakeCase check whether string is snake_case style or not.
+// true: string is snake case, false: other
 func IsSnakeCase(s string) bool {
 	if strings.Contains(s, "_") {
 		fields := strings.Split(s, "_")
@@ -50,10 +51,9 @@ func IsSnakeCase(s string) bool {
 		return true
 	}
 	return isMadeByLowerAndDigit(s)
-
 }
 
-// ToChainCase convert argument to chain-case style string.
+// ToChainCase convert string to chain-case style.
 // If argument is empty, return itself.
 func ToChainCase(s string) string {
 	if len(s) == 0 {
@@ -64,7 +64,8 @@ func ToChainCase(s string) string {
 	return strings.Join(fields, "-")
 }
 
-// IsChainCase whether argument is chain-case style string, return true.
+// IsChainCase check whether string is chain-case style.
+// true: string is chain case, false: other
 func IsChainCase(s string) bool {
 	if strings.Contains(s, "-") {
 		fields := strings.Split(s, "-")
@@ -78,7 +79,7 @@ func IsChainCase(s string) bool {
 	return isMadeByLowerAndDigit(s)
 }
 
-// ToCamelCase convert argument to camelCase style string
+// ToCamelCase convert string to camelCase style.
 // If argument is empty, return itself
 func ToCamelCase(s string) string {
 	if len(s) == 0 {
@@ -94,7 +95,8 @@ func ToCamelCase(s string) string {
 	return strings.Join(fields, "")
 }
 
-// IsCamelCase whether argument is camelCase style string, return true.
+// IsCamelCase check whether string is camelCase style or not.
+// true: string is camel case, false: other.
 // If first character is digit, always returns false
 func IsCamelCase(s string) bool {
 	if isFirstRuneDigit(s) {
@@ -103,7 +105,7 @@ func IsCamelCase(s string) bool {
 	return isMadeByAlphanumeric(s) && isFirstRuneLower(s)
 }
 
-// ToPascalCase convert argument to PascalCase style string
+// ToPascalCase convert string to PascalCase style.
 // If argument is empty, return itself
 func ToPascalCase(s string) string {
 	if len(s) == 0 {
@@ -117,7 +119,8 @@ func ToPascalCase(s string) string {
 	return strings.Join(fields, "")
 }
 
-// IsPascalCase whether argument is PascalCase style string, return true.
+// IsPascalCase check whether string is PascalCase style or not.
+// true: string is pascal case, false: other.
 // If first character is digit, always returns false
 func IsPascalCase(s string) bool {
 	if isFirstRuneDigit(s) {
@@ -126,7 +129,7 @@ func IsPascalCase(s string) bool {
 	return isMadeByAlphanumeric(s) && isFirstRuneUpper(s)
 }
 
-// ToFlatCase convert argument to flatcase style string
+// ToFlatCase convert string to flatcase style.
 // If argument is empty, return itself
 func ToFlatCase(s string) string {
 	if len(s) == 0 {
@@ -137,7 +140,8 @@ func ToFlatCase(s string) string {
 	return strings.Join(fields, "")
 }
 
-// IsFlatCase whether argument is flatcase style string, return true.
+// IsFlatCase check whether string is flatcase style or not.
+// true: string is flat case, false: other.
 // If first character is digit, always returns false
 func IsFlatCase(s string) bool {
 	if isFirstRuneDigit(s) {
@@ -146,13 +150,14 @@ func IsFlatCase(s string) bool {
 	return isMadeByLowerAndDigit(s)
 }
 
-// ToUpperCase convert argument to UPPER_CASE style string.
+// ToUpperCase convert string to UPPER_CASE style.
 // If argument is empty, return itself.
 func ToUpperCase(s string) string {
 	return strings.ToUpper(ToSnakeCase(s))
 }
 
-// IsUpperCase whether argument is UPPER_CASE style string, return true.
+// IsUpperCase check whether string is UPPER_CASE style or not.
+// true: string is flat case, false: other.
 func IsUpperCase(s string) bool {
 	if strings.Contains(s, "_") {
 		fields := strings.Split(s, "_")
@@ -247,7 +252,7 @@ func splitToLowerFields(s string) []string {
 	for _, sf := range strings.Fields(s) {
 		for _, su := range strings.Split(sf, "_") {
 			for _, sh := range strings.Split(su, "-") {
-				for _, sc := range Split(sh) {
+				for _, sc := range split(sh) {
 					fields = append(fields, strings.ToLower(sc))
 				}
 			}
@@ -259,4 +264,34 @@ func splitToLowerFields(s string) []string {
 func toUpperFirstRune(s string) string {
 	rs := []rune(s)
 	return strings.ToUpper(string(rs[0])) + string(rs[1:])
+}
+
+//------The following source code does not exist in the original version----------------------
+//
+// The above code is the copyright below.
+//
+// Copyright 2022 Naohiro CHIKAMATSU
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+// ToKebabCase convert string to kebab-case style. It's same as ToChainCase().
+// If argument is empty, return itself.
+func ToKebabCase(s string) string {
+	return ToChainCase(s)
+}
+
+// IsKebabCase check whether string is kebab-case style. It's same as IsChainCase().
+// true: string is chain case, false: other
+func IsKebabCase(s string) bool {
+	return IsChainCase(s)
 }
