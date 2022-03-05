@@ -323,3 +323,25 @@ func TestToUpperCase(t *testing.T) {
 		}
 	}
 }
+
+//------The following source code does not exist in the original version----------------------
+func TestIsFirstRuneUpper(t *testing.T) {
+	testCases := ""
+	if isFirstRuneUpper(testCases) {
+		t.Error("isFirstRuneUpper() returns true, but expected false")
+	}
+}
+
+func TestIsFirstRuneLower(t *testing.T) {
+	testCases := ""
+	if isFirstRuneLower(testCases) {
+		t.Error("isFirstRuneLower() returns true, but expected false")
+	}
+}
+
+func TestGetRune(t *testing.T) {
+	testCases := ""
+	if getRune(testCases) != 0 {
+		t.Error("getRune() returns not 0, but expected 0")
+	}
+}

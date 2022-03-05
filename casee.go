@@ -213,7 +213,7 @@ func isFirstRuneUpper(s string) bool {
 		return false
 	}
 
-	return unicode.IsUpper(getRuneAt(s, 0))
+	return unicode.IsUpper(getRune(s))
 }
 
 func isFirstRuneLower(s string) bool {
@@ -221,17 +221,17 @@ func isFirstRuneLower(s string) bool {
 		return false
 	}
 
-	return unicode.IsLower(getRuneAt(s, 0))
+	return unicode.IsLower(getRune(s))
 }
 
 func isFirstRuneDigit(s string) bool {
 	if len(s) == 0 {
 		return false
 	}
-	return unicode.IsDigit(getRuneAt(s, 0))
+	return unicode.IsDigit(getRune(s))
 }
 
-func getRuneAt(s string, i int) rune {
+func getRune(s string) rune {
 	if len(s) == 0 {
 		return 0
 	}
