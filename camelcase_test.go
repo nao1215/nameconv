@@ -46,7 +46,7 @@ func ExampleSplit() {
 		"Two  spaces",
 		"BadUTF8\xe2\xe2\xa1",
 	} {
-		fmt.Printf("%#v => %#v\n", c, Split(c))
+		fmt.Printf("%#v => %#v\n", c, split(c))
 	}
 
 	// Output:

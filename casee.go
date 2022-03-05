@@ -247,7 +247,7 @@ func splitToLowerFields(s string) []string {
 	for _, sf := range strings.Fields(s) {
 		for _, su := range strings.Split(sf, "_") {
 			for _, sh := range strings.Split(su, "-") {
-				for _, sc := range Split(sh) {
+				for _, sc := range split(sh) {
 					fields = append(fields, strings.ToLower(sc))
 				}
 			}
